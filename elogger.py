@@ -68,6 +68,7 @@ def on_message(client, userdata, msg):
     """Callback for when a PUBLISH message is received from the server"""
     #print(f'topic {msg.topic} payload {msg.payload}')
     csv_writer = userdata['csv_writer']
+    fieldnames = userdata['fieldnames']
     if msg.topic in APPLIANCE_TOPICS:
         # Convert msg json to dict and flatten.
         sample = flatten_dict(json.loads(msg.payload))
@@ -79,7 +80,7 @@ def on_message(client, userdata, msg):
         sample['time'] = round(time(), 2)
         # Write sample dict to csv file.
         # Note: sample keys not in csv fieldnames are ignored.
-        #print(f'Writing csv sample {sample} (keys not in fieldnames ignored).')
+        print(f'Writing {({k: v for k, v in sample.items() if k in fieldnames})}.')
         csv_writer.writerow(sample)
 
 def on_log(client, userdata, level, buf):
@@ -113,7 +114,7 @@ if __name__ == '__main__':
             extrasaction='ignore'
         )
         csv_writer.writeheader()
-        client.user_data_set({'csv_writer': csv_writer})
+        client.user_data_set({'csv_writer': csv_writer, 'fieldnames': fieldnames})
         # Blocking call that processes network traffic, dispatches callbacks
         # and handles reconnecting.
         try:
