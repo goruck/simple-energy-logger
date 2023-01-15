@@ -62,8 +62,8 @@ def on_connect(client, userdata, flags, rc):
     topics = [(k, 0) for k, _ in APPLIANCE_TOPICS.items()]
     print(f'Subscribing to topics {topics}.')
     res, mid = client.subscribe(topics)
-    if res is not mqtt.MQTT_ERR_SUCCESS:
-        print(f'Subscription error with message ID {mid}.')
+    if res != mqtt.MQTT_ERR_SUCCESS:
+        print(f'Subscription error {res}, message ID {mid}.')
         sys.exit(1)
 
 def on_message(client, userdata, msg):
