@@ -36,7 +36,8 @@ CSV_FILE_NAME = '/home/lindo/develop/simple-energy-logger/appliance_energy_data.
 # MQTT topics to subscribe to with appliance name mapping.
 APPLIANCE_TOPICS = {
     'shellyplugus-c049ef8c27a0/status/switch:0': 'microwave',
-    'shellyplugus-c049ef8be948/status/switch:0': 'kettle'
+    'shellyplugus-c049ef8be948/status/switch:0': 'kettle',
+    'shellyplugus-c049ef8bf230/status/switch:0': 'dishwasher'
     # add more here
 }
 
