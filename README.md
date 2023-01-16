@@ -9,7 +9,7 @@ Switch.GetStatus status to a MQTT Broker. Have only tested Shelly PlugPlus US bu
 
 Typical usage example:
 
-* Configure Shelly Plug to run ```mqtt-switch-status-announce.js``` that publishes ```Switch.GetStatus``` status
+* Configure Shelly Plug to run ```mqtt-switch-status-announce.js``` at boot up (i.e., enable the script) that publishes ```Switch.GetStatus``` status
 to a MQTT Broker.
 * In ```elogger.py```:
     * Set ```BROKER``` to your MQTT Broker IP address.

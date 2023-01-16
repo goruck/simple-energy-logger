@@ -8,8 +8,8 @@ Have only tested Shelly PlugPlus US but other Shelly IoT devices should work.
 
 Typical usage example:
 
-* Configure Shelly Plug to run a script that publishes Switch.GetStatus status
-to a MQTT Broker.
+* Configure Shelly Plug to run the script "mqtt-switch-status-announce.js" on
+boot up that publishes Switch.GetStatus status to a MQTT Broker.
 * Set BROKER to your MQTT Broker IP address.
 * Set CSV_FILE_NAME to the file where you want to log the plug's data.
 * Add a dict entry to APPLIANCE_TOPICS that maps your plug's MQTT topic
