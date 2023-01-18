@@ -38,8 +38,8 @@ APPLIANCE_TOPICS = {
     'shellyplugus-c049ef8c27a0/status/switch:0': 'microwave',
     'shellyplugus-c049ef8be948/status/switch:0': 'kettle',
     'shellyplugus-c049ef8bf230/status/switch:0': 'dishwasher',
-    'shellyplugus-c049ef8c4e74/status/switch:0': 'washing machine'
-    # add more here
+    'shellyplugus-c049ef8c4e74/status/switch:0': 'washing machine',
+    'shellyplugus-c049ef8b2974/status/switch:0': 'fridge'
 }
 
 def _flatten_dict_gen(d, parent_key, sep):
